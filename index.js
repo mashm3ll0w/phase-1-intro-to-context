@@ -9,3 +9,11 @@ function createEmployeeRecord(arr){
     timeOutEvents: []
   }
 }
+
+function createEmployeeRecords(arr){
+  const records = []
+  for (let employee of arr){
+    records.push(createEmployeeRecord(employee))
+  }
+  return records
+}
