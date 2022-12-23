@@ -29,3 +29,14 @@ function createTimeInEvent(employeeObj, dateStamp){
   )
   return employeeObj
 }
+
+function createTimeOutEvent(employeeObj, dateStamp){
+  employeeObj.timeOutEvents.push(
+    {
+    type: "TimeOut",
+    date: dateStamp.split(" ")[0],
+    hour: parseInt(dateStamp.split(" ")[1], 10)
+  }
+  )
+  return employeeObj
+}
