@@ -17,3 +17,15 @@ function createEmployeeRecords(arr){
   }
   return records
 }
+
+
+function createTimeInEvent(employeeObj, dateStamp){
+  employeeObj.timeInEvents.push(
+    {
+    type: "TimeIn",
+    date: dateStamp.split(" ")[0],
+    hour: parseInt(dateStamp.split(" ")[1], 10)
+  }
+  )
+  return employeeObj
+}
