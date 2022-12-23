@@ -51,6 +51,10 @@ function hoursWorkedOnDate(employeeObj, date){
   }
 }
 
+function wagesEarnedOnDate(employeeObj, date){
+  return hoursWorkedOnDate(employeeObj, date) * employeeObj.payPerHour
+}
+
 
 // Testing data
 const charlesMash = createEmployeeRecord(["Charles", "Swaleh", "Cyber", 1200])
