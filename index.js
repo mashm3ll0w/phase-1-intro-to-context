@@ -40,3 +40,21 @@ function createTimeOutEvent(employeeObj, dateStamp){
   )
   return employeeObj
 }
+
+
+
+function hoursWorkedOnDate(employeeObj, date){
+  for(let x = 0; x < employeeObj.timeInEvents.length; x++){
+    if(employeeObj.timeInEvents[x].date == date){
+      return (employeeObj.timeOutEvents[x].hour - employeeObj.timeInEvents[x].hour) / 100
+    }
+  }
+}
+
+
+// Testing data
+const charlesMash = createEmployeeRecord(["Charles", "Swaleh", "Cyber", 1200])
+const timeInCharles = createTimeInEvent(charlesMash, "2022-12-23 0900")
+const timeOutCharles = createTimeOutEvent(charlesMash, "2022-12-23 1900")
+const timeInCharlesSat = createTimeInEvent(charlesMash, "2022-12-24 1000")
+const timeOutCharlesSat = createTimeOutEvent(charlesMash, "2022-12-24 2200")
