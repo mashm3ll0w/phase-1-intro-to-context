@@ -55,6 +55,13 @@ function wagesEarnedOnDate(employeeObj, date){
   return hoursWorkedOnDate(employeeObj, date) * employeeObj.payPerHour
 }
 
+function allWagesFor(employeeObj){
+  let total = 0
+  for (let i = 0; i < employeeObj.timeInEvents.length; i++){
+    total += wagesEarnedOnDate(employeeObj, employeeObj.timeInEvents[i].date)
+  }
+  return total
+}
 
 // Testing data
 const charlesMash = createEmployeeRecord(["Charles", "Swaleh", "Cyber", 1200])
