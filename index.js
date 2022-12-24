@@ -63,9 +63,24 @@ function allWagesFor(employeeObj){
   return total
 }
 
+function calculatePayroll(arr){
+  let total = 0
+  arr.forEach(employee => {
+    total += allWagesFor(employee)
+  });
+  return total
+}
+
+
 // Testing data
 const charlesMash = createEmployeeRecord(["Charles", "Swaleh", "Cyber", 1200])
 const timeInCharles = createTimeInEvent(charlesMash, "2022-12-23 0900")
 const timeOutCharles = createTimeOutEvent(charlesMash, "2022-12-23 1900")
 const timeInCharlesSat = createTimeInEvent(charlesMash, "2022-12-24 1000")
 const timeOutCharlesSat = createTimeOutEvent(charlesMash, "2022-12-24 2200")
+
+const swalehMash = createEmployeeRecord(["Swaleh", "Charles", "Cyber", 1400])
+const timeInSwaleh = createTimeInEvent(swalehMash, "2022-12-23 0600")
+const timeOutSwaleh = createTimeOutEvent(swalehMash, "2022-12-23 2300")
+const timeInSwalehSat = createTimeInEvent(swalehMash, "2022-12-24 1100")
+const timeOutSwalehSat = createTimeOutEvent(swalehMash, "2022-12-24 2300")
