@@ -11,10 +11,7 @@ function createEmployeeRecord(arr){
 }
 
 function createEmployeeRecords(arr){
-  const records = []
-  for (let employee of arr){
-    records.push(createEmployeeRecord(employee))
-  }
+  const records = arr.map(employee => createEmployeeRecord(employee))
   return records
 }
 
